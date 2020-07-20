@@ -1,7 +1,15 @@
 # ChatOS
 Chatbot Operative System
 
-NLPModel -> Natural Lenguage Processing model it can be a neural network, a parser, 
+This is a low level chatbot operative system analogous to traditional GUI. You need to get used to it. Its goal is not accure prediction and understanding of Natural Language, but a practical tool to interact with different system, mainly robots and autonomous systems.
+
+Analogous to traditional GUI, ChatOS has a desktop, ChatDesktop, wingets, Chatgets and a development enviroment, MetaChatBot.
+
+There are global intents in order to exit, or inform of error to ChatLearner
+
+It aim to be input/output independent it can be used text, keyboard or voice and Language Processing independent it can work with NLP of high level, traditional parser, regular expression or just keywords.
+
+NLPModel -> Natural Language Processing model it can be a neural network, a parser, 
 
 NLPModelBoW -> This is a NLPModel for Bag of Words with Artificial Neural Networks
 
@@ -13,7 +21,7 @@ Intent -> ChatOS is based in chatbots type intention guessing
 
 ChatBot -> A chatbot is a collection of intent and a model to guess intents
 
-ChatBotEngine
+ChatBotEngine ->
 
 ## Chatget 
 These are analogous to winget for GUI
@@ -21,9 +29,9 @@ These are analogous to winget for GUI
 This is analogous to desktop GUI
 ## MetaChatBot
 A chatbot to build or modify other chatbots
-# Detect prediction error an improve the model of chatbots
-class ChatLearner(ChatBot):
-    pass
+## ChatLearner
+Detect prediction error an improve the model of chatbots
+
 
 
 
