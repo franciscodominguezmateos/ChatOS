@@ -32,7 +32,7 @@ class NLPANNkeras(NLPANN):
         self.ann.compile(loss='categorical_crossentropy',optimizer='adam',metrics=['accuracy'])
         #self.ann.build()
         self.ann.summary()
-        self.ann.fit(train_x, train_y, epochs=500, batch_size=train_x.shape[0])   # entrena el modelo
+        self.ann.fit(train_x, train_y, epochs=1000, batch_size=train_x.shape[0])   # entrena el modelo
     def save(self,filename):
         self.ann.save(filename)
     def load(self,filename):
