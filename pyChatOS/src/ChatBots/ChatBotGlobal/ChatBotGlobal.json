@@ -1,0 +1,76 @@
+{
+    "name": "ChatBotGlobal",
+    "intents": [
+        {
+            "name": "help",
+            "patterns": [
+                "I am lost",
+                "Could you help me?",
+                "I don't know what to do",
+                "Please help",
+                "Good day"
+            ],
+            "responses": [
+                "I see you need help",
+                "I an trying to give you contextual help",
+                "I hope you find the next aid useful"
+            ],
+            "action": null
+        },
+        {
+            "name": "goodbye",
+            "patterns": [
+                "Bye",
+                "See you later",
+                "Goodbye"
+            ],
+            "responses": [
+                "See you later, thanks for visiting",
+                "Have a nice day",
+                "Bye! Come back again soon."
+            ],
+            "action": null
+        },
+        {
+            "name": "thanks",
+            "patterns": [
+                "Thanks",
+                "Thank you",
+                "That's helpful"
+            ],
+            "responses": [
+                "Happy to help!",
+                "Any time!",
+                "My pleasure"
+            ],
+            "action": null
+        },
+        {
+            "name": "misundestand",
+            "patterns": [
+                "error",
+                "misundestand",
+                "improve",
+                "you didn't undestand me"
+            ],
+            "responses": [
+                "Sorry, there is place to improve.",
+                "Beg you pardon, I am not perfect.",
+                "I am so sorry."
+            ],
+            "action": null
+        },
+        {
+            "name": "unknown",
+            "patterns": [
+                "What is this thing?"
+            ],
+            "responses": [
+                "I don't understand your sentence.",
+                "What do you mean?",
+                "Could you please repeat with other words?"
+            ],
+            "action": null
+        }
+    ]
+}
