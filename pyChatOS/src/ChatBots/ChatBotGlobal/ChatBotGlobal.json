@@ -61,6 +61,21 @@
             "action": null
         },
         {
+            "name": "saveLastSentence",
+            "patterns": [
+                "remember last sentence",
+                "save last sentence",
+                "register what I said",
+                "last sentence to be learnt"
+            ],
+            "responses": [
+                "Wonderfull, this will improve the system.",
+                "Good Idea, I will work better next time.",
+                "I like to learn new things"
+            ],
+            "action": null
+        },
+        {
             "name": "unknown",
             "patterns": [
                 "What is this thing?"

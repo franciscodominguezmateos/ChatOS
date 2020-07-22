@@ -52,6 +52,7 @@ Most of the chatget can have the option of confirmation, after the information i
  - ¿What if the information from the ASR is wrong?-> 'backward/previous field' take you to the previous field
  There may be a version where it only ask empty fields, this could be a ChatFormToComplete....
  After the last field it can read all information and ask for 'cancel/no' 'confirm/ok/yes/fine'
+
 ## ChatDesktop
 This is analogous to desktop GUI
 Direct link
@@ -63,10 +64,16 @@ ChatNavigator
  - Ask for the chatbots available
  - download chatbots
  - install/uninstall chatbots
+Global NLPModel
+ChatDesktop can have a global NLP model able to discriminate chatbots and intent, it could train a model with all pattern of all chat bots and as output a pair (chatbot, intent) -> this could be used on direct links
+
 ## MetaChatBot
 A chatbot to build or modify other chatbots, but a lot of work have to be done manually. As programing the actions, the NLPModels,... etc.
+
 ## ChatLearner
 Detect prediction error an improve the model of chatbots
+Or at any moment the user can uterate a command as "save last sentence" and the last sentence will be saved to improve the NLP model.
+
 ## ChatHelp
 Give you information about some chatbot
 
@@ -79,6 +86,8 @@ It is a chat with intents common to all chatbots, all chatbots have the intents 
   - it stop the actual chatbot an return to ChatDektop
 - Error/mistake/misundestanding
   - when the detector doesn't recognize the right intent this can ask to save the sentence in order to later run ChatLearner in order to improve the system adding the sentece to the list of patter in the right intent. When teh sentence is saved, the failled intent is saved and the chatbots.
+- saveLastSentence
+ will save last utterated sentence in order to allow ChatLearner improve the model
 - i don't understand
    - When the NLP can't detect the intent this is the intent to be launch, it will sample from response as a reply
 
