@@ -8,7 +8,7 @@ TODO: process actions
 import os
 import json
 import random
-from Intent import Intent
+from Core.Intent import Intent
 from NLPModels.NLPModelsBoW.NLPModelBoW import NLPModelBoW
 class ChatBot(object):
     def __init__(self,name):
@@ -20,9 +20,16 @@ class ChatBot(object):
         self.loadJson()
         self.model.load()
         self.predict_threshold=0.55
+    def getBasePath(self):
+        basePath=os.path.join('.','ChatBots',self.name)
+        return basePath
+    def getBaseFileName(self):
+        baseFileName=os.path.join(self.getBasePath(),self.name)
+        print("baseFileName=",baseFileName)
+        return baseFileName
     def loadJson(self):
-        self.intents=[]
-        fileName=os.path.join('./',self.name+'.json')
+        self.intents={}
+        fileName=os.path.join(self.getBaseFileName()+'.json')
         with open(fileName) as json_data:
             intents = json.load(json_data)
         # loop through each sentence in our intents patterns
@@ -45,7 +52,7 @@ class ChatBot(object):
         dic["name"]=self.name
         dic["intents"]=[self.intents[ik].toJsonData() for ik in self.intents]
         json_string=json.dumps(dic,indent=4)
-        fileName=os.path.join('./',self.name+'0.json')
+        fileName=os.path.join(self.getBaseFileName()+'0.json')
         with open(fileName, 'w') as json_file:
             json_file.write(json_string)
     def chooseRandom(self,responses):
@@ -69,11 +76,3 @@ class ChatBot(object):
         intent  =self.predictIntent(sentence)
         response=intent.chooseResponse()
         return response,intent.name
-    def chat_OLD(self,sentence):
-        cn,idc,pc=self.model.predictClass(sentence)
-        print(idc,cn,pc)
-        if pc<0.55:
-            return self.chooseRandom(["I don't understand your sentence.",
-                                 "What do you mean?",
-                                 "Could you please repeat with other words?"]),"do not understand"
-        return self.intents[cn].chooseResponse(),cn

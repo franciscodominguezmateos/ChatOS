@@ -10,7 +10,7 @@ import numpy as np
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
 
-from NLPModels import NLPModel
+from NLPModels.NLPModel import NLPModel
 
 class NLPANN(object):
     pass
@@ -133,16 +133,19 @@ class NLPModelBoW(NLPModel):
         data['documents']=self.documents 
         data['train_x']  =self.train_x 
         data['train_y']  =self.train_y
-        pickle.dump( data, open( os.path.join('./',self.chatBot.name+".pk"), "wb" ) )
-        self.ann.save(os.path.join('./',self.chatBot.name+'.h5'))    # guarda el modelo
+        pickle.dump( data, open(self.chatBot.getBaseFileName()+".pk", "wb" ) )
+        self.ann.save(self.chatBot.getBaseFileName()+'.h5')    # guarda el modelo
     def load(self):
-        data = pickle.load( open( os.path.join('./',self.chatBot.name+".pk"), "rb" ) )
+        fileName=self.chatBot.getBaseFileName()+".pk"
+        if not os.path.exists(fileName):
+            return
+        data = pickle.load( open(fileName, "rb" ) )
         self.words     = data['words']
         self.classes   = data['classes']
         self.documents = data['documents']
         self.train_x   = np.array(data['train_x'])
         self.train_y   = np.array(data['train_y'])
-        self.ann.load(os.path.join('./',self.chatBot.name+'.h5'))
+        self.ann.load(self.chatBot.getBaseFileName()+'.h5')
     def predictClass(self,sentence):
         sentenceBow=self.bow(sentence)
         p=self.ann.predict(sentenceBow)

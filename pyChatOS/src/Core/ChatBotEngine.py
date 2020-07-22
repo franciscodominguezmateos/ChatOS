@@ -3,9 +3,12 @@ Created on 22 Jul 2020
 
 @author: Francisco Dominguez
 '''
+from Core.ChatBot import ChatBot 
 class ChatBotEngine(object):
     def __init__(self):
-        self.currentChatBot=ChatBot('intents')
+        self.currentChatBot=ChatBot('ChatDesktop')
+        #self.currentChatBot.model.train()
+        #self.currentChatBot.model.save()
         self.currentIntent="None"
     def getInput(self):
         return input('Ready: ')
