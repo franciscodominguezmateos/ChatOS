@@ -3,11 +3,12 @@ Created on 22 Jul 2020
 
 @author: Francisco Dominguez
 '''
-import os
 import threading
 from xmlrpc.server import SimpleXMLRPCServer
+from ChatIO.ChatInput import ChatInput
 
-class ChatInputVoice(ChatIO):
+
+class ChatInputVoice(ChatInput):
     '''
     Input string from XML call
     Output shell script to pico2wave

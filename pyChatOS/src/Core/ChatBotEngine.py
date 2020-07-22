@@ -4,14 +4,14 @@ Created on 22 Jul 2020
 @author: Francisco Dominguez
 '''
 from Core.ChatBot import ChatBot 
-from ChatIO.ChatIOVoice import ChatIOVoice
+from ChatIO.ChatOutputVoice import ChatOutputVoice
 class ChatBotEngine(object):
     def __init__(self):
         self.currentChatBot=ChatBot('ChatDesktop')
         #self.currentChatBot.model.train()
         #self.currentChatBot.model.save()
         self.currentIntent="None"
-        self.output=ChatIOVoice()
+        self.output=ChatOutputVoice()
     def getInput(self):
         return input('Ready: ')
     def setOutput(self,response):

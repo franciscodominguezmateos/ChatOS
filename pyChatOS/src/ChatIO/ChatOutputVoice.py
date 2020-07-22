@@ -4,12 +4,10 @@ Created on 22 Jul 2020
 @author: Francisco Dominguez
 '''
 import os
-import threading
-from xmlrpc.server import SimpleXMLRPCServer
 
-from ChatIO.ChatIO import ChatOutput
+from ChatIO.ChatOutput import ChatOutput
 
-class ChatIOVoice(ChatOutput):
+class ChatOutputVoice(ChatOutput):
     '''
     Output shell script to pico2wave
     '''    
@@ -21,4 +19,3 @@ class ChatIOVoice(ChatOutput):
             #command='~/di.sh  "%s."'%tosay
             command='~/say.sh  "%s."'%tosay
             os.system(command)
-       
