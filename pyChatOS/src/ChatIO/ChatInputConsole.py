@@ -3,13 +3,11 @@ Created on 22 Jul 2020
 
 @author: francisco
 '''
-from ChatIO import ChatIO
+from ChatIO import ChatInput
 
-class ChatIOConsole(ChatIO):
+class ChatInputConsole(ChatInput):
     '''
     Traditional input from keyboard and output to screen in text mode
     '''
     def getInput(self):
         return input('Ready: ')
-    def setOutput(self,response):
-        print(response)
