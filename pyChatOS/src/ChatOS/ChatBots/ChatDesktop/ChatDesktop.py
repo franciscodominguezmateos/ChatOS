@@ -3,7 +3,7 @@ Created on 22 Jul 2020
 
 @author: Francisco Dominguez
 '''
-from Core.ChatBot import ChatBot
+from ChatOS.ChatCore.ChatBot import ChatBot
 
 class ChatDesktop(ChatBot):
     '''

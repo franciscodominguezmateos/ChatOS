@@ -8,8 +8,8 @@ TODO: process actions
 import os
 import json
 import random
-from Core.Intent import Intent
-from NLPModels.NLPModelsBoW.NLPModelBoW import NLPModelBoW
+from ChatOS.ChatCore.Intent import Intent
+from ChatOS.NLPModels.NLPModelsBoW.NLPModelBoW import NLPModelBoW
 class ChatBot(object):
     def __init__(self,name):
         self.name=name
@@ -21,7 +21,7 @@ class ChatBot(object):
         self.model.load()
         self.predict_threshold=0.55
     def getBasePath(self):
-        basePath=os.path.join('.','ChatBots',self.name)
+        basePath=os.path.join('.','ChatOS','ChatBots',self.name)
         return basePath
     def getBaseFileName(self):
         baseFileName=os.path.join(self.getBasePath(),self.name)
@@ -42,7 +42,7 @@ class ChatBot(object):
     def loadChatBotGlobal(self):
         if self.name=="ChatBotGlobal":
             return
-        cbg=ChatBot("ChatBotGlobal")
+        cbg=ChatBot("ChatBotGlobal")#this could be taken fron som global/configuratoin file
         #just copy intents
         for ik in cbg.intents:
             self.intents[ik]=cbg.intents[ik]

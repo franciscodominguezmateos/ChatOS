@@ -3,7 +3,7 @@ Created on 22 Jul 2020
 
 @author: Francisco Dominguez
 '''
-from Core import ChatBot
+from ChatOS.ChatCore import ChatBot
 class MetaChatBot(ChatBot):
     '''
     A chatbot to build and modify chatbots

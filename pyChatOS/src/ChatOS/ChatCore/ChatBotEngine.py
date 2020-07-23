@@ -3,8 +3,8 @@ Created on 22 Jul 2020
 
 @author: Francisco Dominguez
 '''
-from Core.ChatBot import ChatBot 
-from ChatIO.ChatOutputVoice import ChatOutputVoice
+from ChatOS.ChatCore.ChatBot import ChatBot 
+import ChatOS.ChatIO as ChatIO
 class ChatBotEngine(object):
     def __init__(self):
         self.currentChatBot=ChatBot('ChatDesktop')
@@ -12,9 +12,10 @@ class ChatBotEngine(object):
         #self.currentChatBot.model.train()
         #self.currentChatBot.model.save()
         self.currentIntent="None"
-        self.output=ChatOutputVoice()
+        self.output=ChatIO.output
+        self.input =ChatIO.input
     def getInput(self):
-        return input('Ready: ')
+        return self.input.getInput()
     def setOutput(self,response):
         self.output.setOutput(response)
     def run(self):

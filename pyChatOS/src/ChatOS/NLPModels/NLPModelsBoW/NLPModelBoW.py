@@ -10,7 +10,7 @@ import numpy as np
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
 
-from NLPModels.NLPModel import NLPModel
+from ChatOS.NLPModels.NLPModel import NLPModel
 
 class NLPANN(object):
     pass

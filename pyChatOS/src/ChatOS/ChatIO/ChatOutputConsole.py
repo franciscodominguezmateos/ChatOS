@@ -3,7 +3,7 @@ Created on 22 Jul 2020
 
 @author: francisco
 '''
-from ChatIO.ChatOutput import ChatOutput
+from ChatOS.ChatIO.ChatOutput import ChatOutput
 
 class ChatIOConsole(ChatOutput):
     '''

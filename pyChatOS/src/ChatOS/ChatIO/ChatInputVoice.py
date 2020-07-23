@@ -5,7 +5,7 @@ Created on 22 Jul 2020
 '''
 import threading
 from xmlrpc.server import SimpleXMLRPCServer
-from ChatIO.ChatInput import ChatInput
+from ChatOS.ChatIO.ChatInput import ChatInput
 
 
 class ChatInputVoice(ChatInput):
