@@ -18,6 +18,21 @@
             "action": null
         },
         {
+            "name": "helpIntent",
+            "patterns": [
+                "Tell me intents",
+                "What can you do?",
+                "What can I say?",
+                "List of intents"
+            ],
+            "responses": [
+                "The intents of this chatbot are:",
+                "Listing chatbot intents:",
+                "These are the intents:"
+            ],
+            "action": null
+        },
+        {
             "name": "goodbye",
             "patterns": [
                 "Bye",
@@ -41,6 +56,7 @@
             "responses": [
                 "Happy to help!",
                 "Any time!",
+                "You are very wellcome!",
                 "My pleasure"
             ],
             "action": null
