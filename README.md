@@ -37,6 +37,9 @@ Most of the chatget can have the option of confirmation, after the information i
 - ChatMonth, ChatWeekDay, ChatNumber
 - ChatField
  just ask for a sentence
+- ChatLines
+ read a collection of sentences up to a keywork "exit/finish/stop". Imagine you want to add a list of fruit to your shoping list, instead of adding fruit by fruit you would add a list.
+ A variant of this is that the sentences or fruit in the anterior example has to be in a list of fruits, that could allow control error.
 - ChatText
  ask for a number of sentences and a keywork "exit/full stop" to finish.
  This can have some keywords to format the input as "dot/point/coma"
@@ -91,6 +94,10 @@ It is a chat with intents common to all chatbots, all chatbots have the intents 
 - i don't understand
    - When the NLP can't detect the intent this is the intent to be launch, it will sample from response as a reply
 
+## user, roles and grants
+it could be useful tu have different users as guest, root, developer, etc.
+
+## Applications
 ChatOS aim is to be the support for the interaction with a very simple knolendge system in robots. 
 with some kind of object, properties, categories/classes and relations and a basic bayesian inference model engine to make some kind of reasoning.
 There is going to be: 
@@ -101,5 +108,5 @@ There is going to be:
  
  A easy esample would be a chatbot to guess and animal given some properties. It could ask properties from the animal and try to guess witch animal is it.
 
-## user, roles and grants
-it could be useful tu have different users as guest, root, developer, etc.
+- To interact with git?
+
