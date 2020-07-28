@@ -9,8 +9,10 @@ class Intent(object):
         self.name     =name
         self.patterns =[]
         self.responses=[]
-        self.action   =None
+        self.actionName   =""
         self.chatBot  =chatBot
+    def getActionName(self):
+        return self.actionName
     def chooseResponse(self):
         sizeResponses   = len(self.responses)
         chooseIdResponse= random.randint(0,sizeResponses-1)
@@ -24,11 +26,11 @@ class Intent(object):
             self.patterns.append(pattern)
         for response in intent['responses']:
             self.responses.append(response)
-        self.action=intent['action']
+        self.actionName=intent['actionName']
     def toJsonData(self):
         dic={}
         dic["name"]=self.name
         dic["patterns"]=self.patterns
         dic["responses"]=self.responses
-        dic["action"]=self.action
+        dic["actionName"]=self.actionName
         return dic

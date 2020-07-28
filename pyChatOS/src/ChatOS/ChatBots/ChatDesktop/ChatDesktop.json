@@ -1,0 +1,137 @@
+{
+    "name": "ChatDesktop",
+    "intents": [
+        {
+            "name": "greeting",
+            "patterns": [
+                "Hi",
+                "How are you",
+                "Is anyone there?",
+                "Hello",
+                "Good day"
+            ],
+            "responses": [
+                "Hello, thanks for visiting",
+                "Good to see you again",
+                "Hi there, how can I help?"
+            ],
+            "actionName": ""
+        },
+        {
+            "name": "goodbye",
+            "patterns": [
+                "Bye",
+                "See you later",
+                "Goodbye"
+            ],
+            "responses": [
+                "See you later, thanks for visiting",
+                "Have a nice day",
+                "Bye! Come back again soon."
+            ],
+            "actionName": ""
+        },
+        {
+            "name": "thanks",
+            "patterns": [
+                "Thanks",
+                "Thank you",
+                "That's helpful"
+            ],
+            "responses": [
+                "Happy to help!",
+                "Any time!",
+                "My pleasure"
+            ],
+            "actionName": ""
+        },
+        {
+            "name": "date",
+            "patterns": [
+                "What day is today?",
+                "could you please tell me what date is today?",
+                "Please, tell me the date"
+            ],
+            "responses": [
+                "I need a acction for the intent date.",
+                "Could be useful have responses with patterns. Don't you?"
+            ],
+            "actionName": ""
+        },
+        {
+            "name": "time",
+            "patterns": [
+                "What time is it?",
+                "What hour is now?"
+            ],
+            "responses": [
+                "We're open every day 9am-9pm",
+                "Our hours are 9am-9pm every day"
+            ],
+            "actionName": ""
+        },
+        {
+            "name": "weather",
+            "patterns": [
+                "How is the weather like?",
+                "Could you tell me the weather forecast?"
+            ],
+            "responses": [
+                "if is not windy, good weather.",
+                "I you can se the sun it is a glorious day."
+            ],
+            "actionName": ""
+        },
+        {
+            "name": "ping",
+            "patterns": [
+                "I want to ping a machine?",
+                "I want to know if a machine is on.",
+                "Check connection of a machine."
+            ],
+            "responses": [
+                "Could you please tell me the identity of the machine.",
+                "Tell me the internet address or the domain name."
+            ],
+            "actionName": ""
+        },
+        {
+            "name": "IP",
+            "patterns": [
+                "What is your IP?",
+                "Tell me your internet address?"
+            ],
+            "responses": [
+                "My internet address is 192.168.1.11",
+                "The IP of this machine is 192.168.1.11"
+            ],
+            "actionName": ""
+        },
+        {
+            "name": "chabotExecute",
+            "patterns": [
+                "Execute chatbot",
+                "Run chatbot",
+                "Launch chatbot"
+            ],
+            "responses": [
+                "Please, tell me the name or number of the chatbot.",
+                "Could you please give me the identification of the chatbot"
+            ],
+            "actionName": "ExecuteChatBot"
+        },
+        {
+            "name": "chatbotList",
+            "patterns": [
+                "What chatbots can I execute?",
+                "List the chatbots.",
+                "What chatbots can I launch?"
+            ],
+            "responses": [
+                "The list of chatbots is this: mopets, shopping list, tasks list."
+            ],
+            "actionName": ""
+        }
+
+    ]
+}

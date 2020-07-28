@@ -7,7 +7,7 @@ from ChatOS.ChatCore.ChatBot import ChatBot
 import ChatOS.ChatIO as ChatIO
 class ChatBotEngine(object):
     def __init__(self):
-        self.currentChatBot=ChatBot('ChatDesktop')
+        self.currentChatBot=ChatBot('MopedShop')        
         #self.currentChatBot.loadJson()
         #self.currentChatBot.model.train()
         #self.currentChatBot.model.save()
@@ -18,10 +18,13 @@ class ChatBotEngine(object):
         return self.input.getInput()
     def setOutput(self,response):
         self.output.setOutput(response)
+    def launchChatBot(self,chatBotName):
+        self.currentChatBot=ChatBot('MopedShop')        
     def run(self):
         while self.currentIntent!="goodbye":
             sentence=self.getInput()
             response,intent=self.currentChatBot.chat(sentence)
             self.currentIntent=intent
             self.setOutput(response)
+            self.currentChatBot.act(intent, sentence)
         self.currentIntent="None"

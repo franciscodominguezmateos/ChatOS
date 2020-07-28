@@ -138,7 +138,9 @@ class NLPModelBoW(NLPModel):
     def load(self):
         fileName=self.chatBot.getBaseFileName()+".pk"
         if not os.path.exists(fileName):
-            return
+            self.buildData()
+            self.train()
+            self.save()
         data = pickle.load( open(fileName, "rb" ) )
         self.words     = data['words']
         self.classes   = data['classes']

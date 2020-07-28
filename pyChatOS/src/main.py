@@ -4,7 +4,6 @@ Created on 22 Jul 2020
 @author: Francisco Dominguez
 '''
 
-from ChatOS.ChatCore.ChatBotEngine import ChatBotEngine
+from ChatOS import chatBotEngine
 
-cbe=ChatBotEngine()
-cbe.run()
+chatBotEngine.run()

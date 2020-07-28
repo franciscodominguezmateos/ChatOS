@@ -15,7 +15,7 @@
                 "I an trying to give you contextual help",
                 "I hope you find the next aid useful"
             ],
-            "action": null
+            "actionName": ""
         },
         {
             "name": "helpIntent",
@@ -30,7 +30,7 @@
                 "Listing chatbot intents:",
                 "These are the intents:"
             ],
-            "action": null
+            "actionName": ""
         },
         {
             "name": "goodbye",
@@ -44,7 +44,7 @@
                 "Have a nice day",
                 "Bye! Come back again soon."
             ],
-            "action": null
+            "actionName": ""
         },
         {
             "name": "thanks",
@@ -59,7 +59,7 @@
                 "You are very wellcome!",
                 "My pleasure"
             ],
-            "action": null
+            "actionName": ""
         },
         {
             "name": "misundestand",
@@ -74,7 +74,7 @@
                 "Beg you pardon, I am not perfect.",
                 "I am so sorry."
             ],
-            "action": null
+            "actionName": ""
         },
         {
             "name": "saveLastSentence",
@@ -89,7 +89,7 @@
                 "Good Idea, I will work better next time.",
                 "I like to learn new things"
             ],
-            "action": null
+            "actionName": ""
         },
         {
             "name": "unknown",
@@ -101,7 +101,7 @@
                 "What do you mean?",
                 "Could you please repeat with other words?"
             ],
-            "action": null
+            "actionName": ""
         }
     ]
 }
