@@ -11,6 +11,7 @@ class Intent(object):
         self.responses=[]
         self.actionName   =""
         self.chatBot  =chatBot
+    def getName(self): return self.name
     def getActionName(self):
         return self.actionName
     def chooseResponse(self):

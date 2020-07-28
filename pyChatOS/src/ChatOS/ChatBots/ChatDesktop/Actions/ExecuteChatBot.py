@@ -9,9 +9,6 @@ from ChatOS.ChatCore.ChatExceptions import ChatExceptionMisunderstand, ChatExcep
 
 class ExecuteChatBot(ChatField):
     def __init__(self, chatBot):
-        '''
-        Constructor
-        '''
         super().__init__(chatBot)
     def exec(self,sentence):
         try:

@@ -29,6 +29,8 @@ class ChatBot(object):
         self.predict_threshold=0.55
         self.actions={}
         self.loadActions()
+    def addIntent(self,intent):
+        self.intents[intent.getName()]=intent
     def getChatBotPath(self):
         path=os.path.join(ChatOS.BASE_PATH_CHATBOTS,self.name)
         return path
@@ -85,10 +87,6 @@ class ChatBot(object):
         sizeResponses=len(responses)
         chooseIdResponse=random.randint(0,sizeResponses-1)
         return responses[chooseIdResponse]
-    #def chooseResponse(self,predictedIntent):
-    #    for intent in self.intents:
-    #        if intent.name==predictedIntent:
-    #            return self.chooseRandom(intent.responses)
     def act(self,intentName,sentence):
         intent=self.intents[intentName]
         actionName=intent.getActionName()
@@ -105,3 +103,25 @@ class ChatBot(object):
         intent  =self.predictIntent(sentence)
         response=intent.chooseResponse()
         return response,intent.name
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

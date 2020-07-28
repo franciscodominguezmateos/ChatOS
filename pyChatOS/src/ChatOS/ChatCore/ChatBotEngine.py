@@ -19,7 +19,7 @@ class ChatBotEngine(object):
     def setOutput(self,response):
         self.output.setOutput(response)
     def launchChatBot(self,chatBotName):
-        self.currentChatBot=ChatBot('MopedShop')        
+        self.currentChatBot=ChatBot(chatBotName)        
     def run(self):
         while self.currentIntent!="goodbye":
             sentence=self.getInput()
