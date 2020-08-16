@@ -11,6 +11,12 @@ class Intent(object):
         self.responses=[]
         self.actionName   =""
         self.chatBot  =chatBot
+    def addPattern(self,s):
+        self.patterns.append(s)
+    def addResponse(self,s):
+        self.responses.append(s)
+    def setActionName(self,name):
+        self.actionName=name
     def getName(self): return self.name
     def getActionName(self):
         return self.actionName

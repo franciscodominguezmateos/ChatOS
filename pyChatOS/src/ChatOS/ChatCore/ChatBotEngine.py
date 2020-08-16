@@ -5,12 +5,12 @@ Created on 22 Jul 2020
 '''
 from ChatOS.ChatCore.ChatBot import ChatBot 
 import ChatOS.ChatIO as ChatIO
+from ChatOS.Chatgets.ChatConfirm import ChatConfirm
+
 class ChatBotEngine(object):
     def __init__(self):
-        self.currentChatBot=ChatBot('MopedShop')        
-        #self.currentChatBot.loadJson()
-        #self.currentChatBot.model.train()
-        #self.currentChatBot.model.save()
+        chatbot=ChatBot('ChatDesktop') 
+        self.chatbotStack=[chatbot]
         self.currentIntent="None"
         self.output=ChatIO.output
         self.input =ChatIO.input
@@ -19,12 +19,30 @@ class ChatBotEngine(object):
     def setOutput(self,response):
         self.output.setOutput(response)
     def launchChatBot(self,chatBotName):
-        self.currentChatBot=ChatBot(chatBotName)        
+        chatbot=ChatBot(chatBotName)
+        self.chatbotStack.append(chatbot)
+    def getCurrentChatBot(self): 
+        return self.chatbotStack[-1]    
+    def notEmptyStack(self): return self.chatbotStack
+    def popChatBot(self):
+        if len(self.chatbotStack)==1:
+            self.setOutput("This is the last chatbot. The system will be closed. Are you sure?")
+            cfcg=ChatConfirm(self.getCurrentChatBot())
+            response=cfcg.exec("")
+            if response:
+                self.setOutput("A pleasure serving you.Bye.")
+            else:
+                self.setOutput("Ok, go on talking.")
+                return
+        self.chatbotStack.pop()
     def run(self):
-        while self.currentIntent!="goodbye":
+        while self.notEmptyStack():
             sentence=self.getInput()
-            response,intent=self.currentChatBot.chat(sentence)
-            self.currentIntent=intent
+            response,intentName=self.getCurrentChatBot().chat(sentence)
+            self.currentIntent=intentName
             self.setOutput(response)
-            self.currentChatBot.act(intent, sentence)
+            if self.currentIntent!="goodbye":
+                self.getCurrentChatBot().act(intentName, sentence)
+            else: 
+                self.popChatBot()
         self.currentIntent="None"
